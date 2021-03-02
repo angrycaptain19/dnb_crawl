@@ -32,7 +32,7 @@ def resolve_env():
     
     basepath = f"{os.path.dirname(os.path.abspath(getsourcefile(lambda:0)))}/drivers"
 
-    if any([sys.platform.startswith(x) for x in ['freebsd', 'linux', 'aix']]):
+    if any(sys.platform.startswith(x) for x in ['freebsd', 'linux', 'aix']):
         # Linux
         os.environ['PATH'] += f":{basepath}/linux/"
     elif sys.platform.startswith('darwin'):
